@@ -7,7 +7,7 @@ mod collision;
 mod primitives;
 
 /// An instance of a physics engine
-trait StaticPhysInstance {
+pub trait StaticPhysInstance {
     fn build(raw: &'static PhysCapabilities) -> DynamicStruct;
 }
 
@@ -15,6 +15,15 @@ trait StaticPhysInstance {
 pub struct PhysCapabilities {
     /// Collision capabilities of the physics engine
     coll_capabilities: &'static [collision::CollisionCapability],
+}
+
+impl PhysCapabilities {
+    pub fn new(coll: &'static [collision::CollisionCapability]) -> Self {
+        Self {
+            coll_capabilities: coll,
+        }
+    }
+
 }
 
 #[non_exhaustive]
@@ -27,4 +36,6 @@ pub enum PhysDimension {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    struct EmptyPhysEngine {}
 }

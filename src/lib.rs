@@ -3,8 +3,8 @@
 use bevy::reflect::DynamicStruct;
 use primitives::*;
 
-mod primitives;
 mod collision;
+mod primitives;
 
 /// An instance of a physics engine
 trait StaticPhysInstance {
@@ -14,9 +14,8 @@ trait StaticPhysInstance {
 /// The raw representation of a physics engines capabilities
 pub struct PhysCapabilities {
     /// Collision capabilities of the physics engine
-    coll_capabilities: &'static [collision::CollisionCapability]
+    coll_capabilities: &'static [collision::CollisionCapability],
 }
-
 
 #[non_exhaustive]
 #[derive(Debug, Eq, PartialEq)]
@@ -24,7 +23,6 @@ pub enum PhysDimension {
     TwoDimensional,
     ThreeDimensional,
 }
-
 
 #[cfg(test)]
 mod tests {

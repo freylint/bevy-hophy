@@ -1,10 +1,24 @@
 use crate::primitives::*;
 use crate::PhysDimension;
 
+/// A capability of a physics engine to provide a query with specific: dimensions, strategies, and
+/// primitives
 pub struct CollisionCapability {
+    /// The dimensionality of the query
+    ///
+    /// ie: 2D vs 3D
+    // TODO Make generic
     dimension: PhysDimension,
-    motion: CollisionSolvingStrategy,
+    /// The collision calculation strategy of the query
+    // TODO make generic
+    strategy: CollisionSolvingStrategy,
+    /// The query to be provided by the physics engine
+    query: CollisionQuery,
+    /// The primitive doing the colliding
+    // TODO make generic
     collider: PhysBoundingPrimitives,
+    /// The primitive being collided with
+    // TODO make generic
     collided: PhysBoundingPrimitives,
 }
 

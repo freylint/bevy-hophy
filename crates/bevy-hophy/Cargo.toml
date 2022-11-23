@@ -1,0 +1,12 @@
+[package]
+name = "bevy-hophy"
+version = "0.1.0"
+edition = "2021"
+description = "A high order physics abstraction for the bevy game engine modelled on the vulkan API"
+repository = "https://github.com/freylint/bevy-hophy"
+keywords = ["bevy", "physics"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy = {git="https://github.com/bevyengine/bevy.git", default-features=false, features = []}

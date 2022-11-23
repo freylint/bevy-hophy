@@ -9,3 +9,4 @@ keywords = ["bevy", "physics"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+bevy = {git="https://github.com/bevyengine/bevy.git", default-features=false, features = []}

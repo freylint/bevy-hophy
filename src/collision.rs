@@ -1,3 +1,5 @@
+use crate::primitives::*;
+use crate::PhysDimension;
 
 pub struct CollisionCapability {
     dimension: PhysDimension,

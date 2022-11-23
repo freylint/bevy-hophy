@@ -7,12 +7,13 @@ mod primitives;
 mod collision;
 
 /// An instance of a physics engine
-trait PhysInstance {
+trait StaticPhysInstance {
     fn build(raw: &'static PhysCapabilities) -> DynamicStruct;
 }
 
 /// The raw representation of a physics engines capabilities
 pub struct PhysCapabilities {
+    /// Collision capabilities of the physics engine
     coll_capabilities: &'static [collision::CollisionCapability]
 }
 
